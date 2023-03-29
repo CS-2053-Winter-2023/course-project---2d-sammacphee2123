@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour
         {
             Dead();
         }
+        if (collision.gameObject.tag == "Enemy")
+            Dead();
     }
 
     private void UpdateAnimation()
