@@ -19,6 +19,7 @@ public class WinController : MonoBehaviour
             winSound.Play();
             isBeat = true;
             Invoke("BeatLevel", 2f);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
