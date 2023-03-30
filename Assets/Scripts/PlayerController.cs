@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetTrigger("dead");
         deathSound.Play();
-        rb.bodyType = RigidbodyType2D.Static;
+       // rb.bodyType = RigidbodyType2D.Static;
     }
 
     private void Restart()
