@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Pink : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Animator anim;
+    private Animator anim;
     private bool run;
     public float speed;
     private Transform player;
