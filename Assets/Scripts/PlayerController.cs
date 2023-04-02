@@ -9,16 +9,16 @@ public class PlayerController : MonoBehaviour
     private BoxCollider2D box;
     private Animator animator;
     private SpriteRenderer sprite;
+    
 
     private float directionX = 0f;
     [SerializeField] private float moveSpeed = 7f;
-    [SerializeField] private float jumpSpeed = 14f;
-
+    [SerializeField] private float jumpSpeed = 14f; 
+    [SerializeField] private GameObject rotatePoint;
     [SerializeField] private LayerMask ground;
+    [SerializeField] private AudioSource jumpSound, deathSound, throwKnifeSound;
 
     private enum AnimationState { idle, running, jumping, falling }
-
-    [SerializeField] private AudioSource jumpSound, deathSound;
 
     // Start is called before the first frame update
     void Start()
@@ -41,17 +41,14 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
         }
         UpdateAnimation();
-        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Trap"))
+        if(collision.gameObject.CompareTag("Trap") || collision.gameObject.CompareTag("Enemy"))
         {
             Dead();
         }
-        if (collision.gameObject.tag == "Enemy")
-            Dead();
     }
 
     private void UpdateAnimation()
@@ -80,7 +77,6 @@ public class PlayerController : MonoBehaviour
         {
             state = AnimationState.falling;
         }
-        
         animator.SetInteger("state", (int) state);
     }
 
@@ -93,11 +89,28 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetTrigger("dead");
         deathSound.Play();
-       // rb.bodyType = RigidbodyType2D.Static;
+        rb.bodyType = RigidbodyType2D.Static;
     }
 
     private void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Teleport()
+    {
+        Vector2 offset = new Vector2(0f, 1f);
+        Vector2 destination = rotatePoint.GetComponent<ThrowKnife>().getKnifePosition();
+        if(destination != null)
+        {
+            transform.position = destination + offset;
+        }
+        rotatePoint.GetComponent<ThrowKnife>().DestroyKnife();
+        animator.SetTrigger("reappear");
+    }
+
+    public void Reappear()
+    {
+        rb.bodyType = RigidbodyType2D.Dynamic;
     }
 }
