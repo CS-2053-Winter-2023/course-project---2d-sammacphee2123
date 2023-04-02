@@ -3,19 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-public class StartMenu : MonoBehaviour
+public class NextScene : MonoBehaviour
 {
-
-
-    public void StartGame()
+    public void goNext()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
-    public void ExitGame()
-    {
-        Application.Quit();
-    }
-
 }
