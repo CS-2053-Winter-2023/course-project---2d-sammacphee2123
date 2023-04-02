@@ -50,6 +50,10 @@ public class EnemyController : MonoBehaviour
         else if (collision.gameObject.tag == "EnemyBigJump"){
             rb.AddForce(Vector2.up * 500);
         }
+        else if (collision.gameObject.CompareTag("knife"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     void EnemyDirection(){
