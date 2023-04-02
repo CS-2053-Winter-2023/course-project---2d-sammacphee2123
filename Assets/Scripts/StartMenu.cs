@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class StartMenu : MonoBehaviour
 {
+    public GameObject story;
+    public GameObject gameIntro;
 
     public void StartGame()
     {
@@ -14,5 +17,25 @@ public class StartMenu : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void ShowStory()
+    {
+        if(story.activeSelf == true)
+            story.SetActive(false);
+        else
+            story.SetActive(true);
+    }
+
+
+    public void Introduce()
+    {
+        gameIntro.SetActive(true);
+
+    }
+    public void IntroduceClose()
+    {
+        gameIntro.SetActive(false);
+
     }
 }
