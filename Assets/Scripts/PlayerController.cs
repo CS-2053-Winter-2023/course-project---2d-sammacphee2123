@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviour
 
     public void Teleport()
     {
-        Vector2 offset = new Vector2(0f, 1f);
+        Vector2 offset = new Vector2(0f, 0.5f);
         Vector2 destination = rotatePoint.GetComponent<ThrowKnife>().getKnifePosition();
         if(destination != null)
         {
