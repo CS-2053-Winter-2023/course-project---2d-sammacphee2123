@@ -1328,8 +1328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23821b68aab50664dadc666bc8bc91ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storyText: {fileID: 0}
-  buttonText: {fileID: 0}
+  storyText: {fileID: 894904516}
+  buttonText: {fileID: 1040307546}
   story:
   - 'As the government''s most esteemed ninja, you have been tasked to track down
     the whereabouts of the three mob bosses who stole our army''s weapons. Your mission
