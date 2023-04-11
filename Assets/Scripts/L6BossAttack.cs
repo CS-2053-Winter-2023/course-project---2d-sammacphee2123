@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossAttack : MonoBehaviour
+public class L6BossAttack : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public float bulletSpeed = 10f;
@@ -30,7 +30,7 @@ public class BossAttack : MonoBehaviour
     {
         Vector2 direction = (playerTransform.position - transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(1f, 1f, 0f), Quaternion.Euler(new Vector3(0, 0, angle)));
+        GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(1f, 0.3f, 0f), Quaternion.Euler(new Vector3(0, 0, angle)));
         bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
     }
 
