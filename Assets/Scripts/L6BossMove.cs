@@ -42,7 +42,7 @@ public class L6BossMove : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("knife"))
+        if (collision.gameObject.CompareTag("knife") || collision.gameObject.CompareTag("Trap") || collision.gameObject.CompareTag("thirdKnife"))
         {
             //HP -= 1;
             healthBar.fillAmount -= (float)(0.1);// (HP/10); 

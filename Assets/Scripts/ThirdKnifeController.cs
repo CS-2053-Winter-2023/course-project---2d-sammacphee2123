@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThrowKnife : MonoBehaviour
+public class ThirdKnifeController : MonoBehaviour
 {
     private Camera mainCamera;
     private Vector3 mousePosition;
@@ -12,7 +12,6 @@ public class ThrowKnife : MonoBehaviour
     public Transform knifeTransform;
     private Animator playerAnimator;
     public bool hasKnife;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -34,32 +33,22 @@ public class ThrowKnife : MonoBehaviour
             hasKnife = false;
             knife = Instantiate(knifePrefab, knifeTransform.position, Quaternion.identity);
         }
-        if (Input.GetMouseButton(1) && !hasKnife)
-        {
-            Player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            playerAnimator.SetTrigger("dissapear");
-        }
-        if(Input.GetKeyDown("r"))
+        if (Input.GetKeyDown("r"))
         {
             DestroyKnife();
         }
     }
-
     public Vector3 getKnifePosition()
     {
-        if(knife != null)
+        if (knife != null)
         {
             return knife.transform.position;
         }
         return Player.transform.position;
     }
-
     public void DestroyKnife()
     {
-        if (knife != null)
-        {
-            hasKnife = true;
-            Destroy(knife);
-        }
+        hasKnife = true;
+        Destroy(knife);
     }
 }

@@ -10,6 +10,7 @@ TagManager:
   - EnemyBigJump
   - knife
   - Level
+  - thirdKnife
   layers:
   - Default
   - TransparentFX

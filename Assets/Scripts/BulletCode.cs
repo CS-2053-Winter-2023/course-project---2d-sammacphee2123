@@ -29,6 +29,11 @@ public class BulletCode : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
             return;
+        if(collision.gameObject.CompareTag("thirdKnife"))
+        {
+            velocity = -velocity;
+            return;
+        }
         Destroy(gameObject);
     }
 }
