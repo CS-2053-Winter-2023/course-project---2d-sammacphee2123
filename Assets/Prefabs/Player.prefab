@@ -101,7 +101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &900317087
 Transform:
   m_ObjectHideFlags: 0
@@ -516,6 +516,11 @@ MonoBehaviour:
   jumpSound: {fileID: 5187688552603891631}
   deathSound: {fileID: 5187688552603891630}
   throwKnifeSound: {fileID: 1538118824}
+  weapon1: {fileID: 5894768682807259947}
+  weapon1Image: {fileID: 0}
+  weapon2: {fileID: 900317086}
+  weapon3: {fileID: 900317086}
+  weapon3Image: {fileID: 0}
 --- !u!95 &5187688552603891628
 Animator:
   serializedVersion: 4
@@ -840,7 +845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8838495545043607951
 Transform:
   m_ObjectHideFlags: 0
