@@ -30,7 +30,7 @@ public class StoryController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-        if(storyIndex > 2)
+        else if(storyIndex > 2)
         {
             buttonText.text = "Start!";
             storyText.text = story[storyIndex];

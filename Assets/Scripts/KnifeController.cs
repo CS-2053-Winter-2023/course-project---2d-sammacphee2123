@@ -31,10 +31,10 @@ public class KnifeController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collider)
     {
-        if(collider.gameObject.CompareTag("Level"))
-        {
+        //if(collider.gameObject.CompareTag("Level"))
+        //{
             rb.bodyType = RigidbodyType2D.Static;
-        }
+        //}
         Debug.Log("collided with " + collider.gameObject.name);
     }
 }

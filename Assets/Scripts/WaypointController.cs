@@ -19,5 +19,6 @@ public class WaypointController : MonoBehaviour
             }
         }
         transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, Time.deltaTime * speed);
+        
     }
 }
