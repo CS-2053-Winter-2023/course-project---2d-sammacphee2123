@@ -11,6 +11,8 @@ TagManager:
   - knife
   - Level
   - thirdKnife
+  - wall
+  - boss
   layers:
   - Default
   - TransparentFX
