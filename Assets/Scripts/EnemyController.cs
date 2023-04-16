@@ -96,8 +96,7 @@ public class EnemyController : MonoBehaviour
         {
             EnemyDirection();
             enemyToPlayerDistance = transform.position.x - player.position.x;
-            Debug.Log(enemyToPlayerDistance);
-            if((enemyToPlayerDistance >= 5) || (enemyToPlayerDistance <= -5)){
+            if((enemyToPlayerDistance >= 7) || (enemyToPlayerDistance <= -7)){
                 directionX = 1f;
                 rb.velocity = new Vector2(directionX * speed, rb.velocity.y);
             }
@@ -127,13 +126,15 @@ public class EnemyController : MonoBehaviour
         }
     }
     void EnemyDirection(){
+        Vector3 thescale = this.transform.localScale;
         if(this.transform.position.x < this.player.position.x){
-            Vector3 thescale = this.transform.localScale;
-            this.transform.localScale = thescale;
+            thescale.x = Mathf.Abs(thescale.x);
             directionX = 1f;
         }
         else{
+            thescale.x = Mathf.Abs(thescale.x) * -1;
             directionX = -1f;
         }
+        this.transform.localScale = thescale;
     }
 }

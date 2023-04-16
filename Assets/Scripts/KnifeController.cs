@@ -9,6 +9,7 @@ public class KnifeController : MonoBehaviour
     public float force;
     [SerializeField] private Vector3 velocity;
     private Rigidbody2D rb;
+    public ThrowKnife throwKnife;
 
     // Start is called before the first frame update
     void Start()
@@ -31,10 +32,10 @@ public class KnifeController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collider)
     {
-        if(collider.gameObject.CompareTag("Level"))
+        rb.bodyType = RigidbodyType2D.Static;
+        if (collider.gameObject.CompareTag("boss"))
         {
-            rb.bodyType = RigidbodyType2D.Static;
+           throwKnife.DestroyKnife();
         }
-        Debug.Log("collided with " + collider.gameObject.name);
     }
 }

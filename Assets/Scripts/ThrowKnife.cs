@@ -56,7 +56,10 @@ public class ThrowKnife : MonoBehaviour
 
     public void DestroyKnife()
     {
-        hasKnife = true;
-        Destroy(knife);
+        if (knife != null)
+        {
+            hasKnife = true;
+            Destroy(knife);
+        }
     }
 }

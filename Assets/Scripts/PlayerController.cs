@@ -18,6 +18,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask ground;
     [SerializeField] private AudioSource jumpSound, deathSound, throwKnifeSound;
 
+    public GameObject weapon1;
+    public GameObject weapon1Image;
+    public GameObject weapon2;
+    //public GameObject weapon2Image;
+    public GameObject weapon3;
+    public GameObject weapon3Image;
+
     private enum AnimationState { idle, running, jumping, falling }
 
     // Start is called before the first frame update
@@ -41,11 +48,21 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
         }
         UpdateAnimation();
+        switchWeapon();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+;
         if(collision.gameObject.CompareTag("Trap") || collision.gameObject.CompareTag("Enemy"))
+        {
+            Dead();
+        }
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.tag == "Trap")
         {
             Dead();
         }
@@ -99,11 +116,10 @@ public class PlayerController : MonoBehaviour
 
     public void Teleport()
     {
-        Vector2 offset = new Vector2(0f, 0.5f);
         Vector2 destination = rotatePoint.GetComponent<ThrowKnife>().getKnifePosition();
         if(destination != null)
         {
-            transform.position = destination + offset;
+            transform.position = destination;
         }
         rotatePoint.GetComponent<ThrowKnife>().DestroyKnife();
         animator.SetTrigger("reappear");
@@ -112,5 +128,36 @@ public class PlayerController : MonoBehaviour
     public void Reappear()
     {
         rb.bodyType = RigidbodyType2D.Dynamic;
+    }
+
+    private void switchWeapon()
+    {
+        if (Input.GetKeyDown("1"))
+        {
+            weapon1.gameObject.SetActive(true);
+            weapon1Image.gameObject.SetActive(true);
+            weapon2.gameObject.SetActive(false);
+            //weapon2Image.gameObject.SetActive(false);
+            weapon3.gameObject.SetActive(false);
+            weapon3Image.gameObject.SetActive(false);
+        }
+        else if (Input.GetKeyDown("2"))
+        {
+            weapon1.gameObject.SetActive(false);
+            weapon1Image.gameObject.SetActive(false);
+            weapon2.gameObject.SetActive(true);
+            //weapon2Image.gameObject.SetActive(true);
+            weapon3.gameObject.SetActive(false);
+            weapon3Image.gameObject.SetActive(false);
+        }
+        else if (Input.GetKeyDown("3"))
+        {
+            weapon1.gameObject.SetActive(false);
+            weapon1Image.gameObject.SetActive(false);
+            weapon2.gameObject.SetActive(false);
+            //weapon2Image.gameObject.SetActive(false);
+            weapon3.gameObject.SetActive(true);
+            weapon3Image.gameObject.SetActive(true);
+        }
     }
 }
