@@ -12,7 +12,6 @@ public class ThrowKnife : MonoBehaviour
     public Transform knifeTransform;
     private Animator playerAnimator;
     public bool hasKnife;
-
     // Start is called before the first frame update
     void Start()
     {

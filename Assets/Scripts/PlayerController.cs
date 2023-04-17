@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public GameObject weapon1;
     public GameObject weapon1Image;
     public GameObject weapon2;
-    //public GameObject weapon2Image;
+    public GameObject weapon2Image;
     public GameObject weapon3;
     public GameObject weapon3Image;
 
@@ -137,7 +137,7 @@ public class PlayerController : MonoBehaviour
             weapon1.gameObject.SetActive(true);
             weapon1Image.gameObject.SetActive(true);
             weapon2.gameObject.SetActive(false);
-            //weapon2Image.gameObject.SetActive(false);
+            weapon2Image.gameObject.SetActive(false);
             weapon3.gameObject.SetActive(false);
             weapon3Image.gameObject.SetActive(false);
         }
@@ -146,7 +146,7 @@ public class PlayerController : MonoBehaviour
             weapon1.gameObject.SetActive(false);
             weapon1Image.gameObject.SetActive(false);
             weapon2.gameObject.SetActive(true);
-            //weapon2Image.gameObject.SetActive(true);
+            weapon2Image.gameObject.SetActive(true);
             weapon3.gameObject.SetActive(false);
             weapon3Image.gameObject.SetActive(false);
         }
@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour
             weapon1.gameObject.SetActive(false);
             weapon1Image.gameObject.SetActive(false);
             weapon2.gameObject.SetActive(false);
-            //weapon2Image.gameObject.SetActive(false);
+            weapon2Image.gameObject.SetActive(false);
             weapon3.gameObject.SetActive(true);
             weapon3Image.gameObject.SetActive(true);
         }
