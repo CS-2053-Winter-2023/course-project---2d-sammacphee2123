@@ -15,7 +15,7 @@ public class L5Intro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButton(0))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             Level5Intro.SetActive(false);
             Time.timeScale = 1;

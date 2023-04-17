@@ -39,9 +39,6 @@ public class SecondKnifeController : MonoBehaviour
             knife = Instantiate(knifePrefab, knifeTransform.position, Quaternion.identity);
             rb.gravityScale *= -1;
             sprite.flipY = !sprite.flipY;
-        }
-        if(Input.GetKeyDown("r"))
-        {
             DestroyKnife();
         }
     }

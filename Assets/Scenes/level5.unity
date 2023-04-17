@@ -1552,7 +1552,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "New knife! Press '3' to active it, you can not throw it like other knife,
     but it brings you ability to knock back flying props by left click your mouse.
-    Do not forget about recycle it! \n\n\nClick screen to begin!"
+    Do not forget about recycle it! \n\n\nPress SPACE to begin!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

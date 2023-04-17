@@ -8,7 +8,6 @@ public class L3EnemyController : MonoBehaviour
     private Transform player;
     UnityEngine.AI.NavMeshAgent agent;
     Rigidbody2D rb;
-    private float jumpSpeed = 11f;
     private float directionX;
     public float speed;
     private float enemyToPlayerDistanceX, enemyToPlayerDistanceY;
