@@ -67483,8 +67483,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.053333327, y: 0.11111111}
   m_AnchorMax: {x: 0.9666667, y: 0.8666666}
-  m_AnchoredPosition: {x: -4.5, y: 1}
-  m_SizeDelta: {x: 39, y: 22}
+  m_AnchoredPosition: {x: -4.5, y: 24.890059}
+  m_SizeDelta: {x: 39, y: 69.779884}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1759927505
 MonoBehaviour:
@@ -67506,9 +67506,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'New knife! Press ''2'' to active it, this knife give you the ability to
-    reverse gravity by LEFT MOUSE CLICK Don''t forget to switch back to knife 1 to
-    kill enemy.
+  m_text: 'New knife! Press ''2'' to active reverse gravity knife. LEFT MOUSE CLICK
+    to reverse gravity.  Don''t forget to switch back to knife 1(press "1") to kill
+    enemy.
+
+
+    Hint: shoot knife 1 to a wall then teleport to let the player free
+    fall to the ground.
 
 
     Press SPACE to begin!'
@@ -67538,8 +67542,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
