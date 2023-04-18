@@ -1,6 +1,8 @@
 # course-project---2d-sammacphee2123
 course-project---2d-sammacphee2123 created by GitHub Classroom
 
+Game Play video: https://youtu.be/gqLeAL-kVlU
+
 Your objective is to defeat all the enemies in each level and reach the end of the game.
 
 You have three knives as weapons: Knife 1, Knife 2, and Knife 3.
